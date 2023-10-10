@@ -6,7 +6,7 @@ RUN apt update && apt install -f -y \
     php8.2-mysql \
     php-json \
     php8.2-curl curl \
-    mariadb-client sendmail\
+    mariadb-client \
     && sed -i "s|listen = /run/php/php8.2-fpm.sock|listen = 0.0.0.0:9000|g" /etc/php/8.2/fpm/pool.d/www.conf
 
 EXPOSE 9000
