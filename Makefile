@@ -18,4 +18,4 @@ fclean: clean
 	docker rmi -f $(shell docker images -q)
 	docker volume rm $(shell docker volume ls -q)
 	@sudo rm -rf /home/$(USER)/data
-re: fclean all
+re: clean all

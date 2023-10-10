@@ -45,11 +45,15 @@ services:
       WP_TITLE: ${WP_TITLE}
       WP_URL: ${WP_URL}
       WP_ADMIN: ${WP_ADMIN}
-      WP_ADMIN_PASSWD: ${DB_ROOT_PASSWD}
+      WP_ADMIN_PASSWD: ${WP_ADMIN_PASSWD}
       WP_ADMIN_EMAIL: ${WP_ADMIN_EMAIL}
+      WP_USER_EMAIL: ${WP_USER_EMAIL}
       WP_DB_NAME: ${DB_NAME}
-      WP_USER: ${DB_USER}
-      WP_PASSWD: ${DB_PASSWD}
+      DB_USER: ${DB_USER}
+      WP_USER: ${WP_USER}
+      WP_PASSWD: ${WP_PASSWD}
+      DB_PASSWD: ${DB_PASSWD}
+      DB_ROOT_PASSWD: ${DB_ROOT_PASSWD}
     restart: always
 
 networks:
