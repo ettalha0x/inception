@@ -3,19 +3,27 @@ NAME = inception
 CREATE_DIRS = sh srcs/requirements/tools/init.sh
 
 all:
-	@echo "Building images..."
-	$(CREATE_DIRS)
+	@if [ ! -d "/home/$(USER)/data" ]; then \
+		echo "Creating local volumes directories..."; \
+		$(CREATE_DIRS); \
+	fi
+	@echo "Building images and starting containers..."
 	@docker-compose -p $(NAME) -f srcs/docker-compose.yml up --build -d
 
-
 clean:
-	@echo "Removing containers..."
-	docker-compose -p $(NAME) -f srcs/docker-compose.yml down
+	@if [ -n "$$(docker container ls -q)" ]; then \
+		echo "Removing containers..."; \
+		docker-compose -p $(NAME) -f srcs/docker-compose.yml down; \
+	fi
+
 fclean: clean
-	@echo "Full cleaning..."
-	@docker builder prune -a -f
-	docker-compose -p $(NAME) -f srcs/docker-compose.yml down -v --remove-orphans
-	docker rmi -f $(shell docker images -q)
-	docker volume rm $(shell docker volume ls -q)
-	@sudo rm -rf /home/$(USER)/data
+	@if [ -n "$$(docker images -q)" ]; then \
+		echo "Removing images..."; \
+		docker rmi -f $$(docker images -q); \
+	fi
+
+	@if [ -d "/home/$(USER)/data" ]; then \
+		echo "Removing local volumes directories..."; \
+		sudo rm -rf /home/$(USER)/data; \
+	fi
 re: clean all
