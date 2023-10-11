@@ -54,6 +54,11 @@ services:
       WP_PASSWD: ${WP_PASSWD}
       DB_PASSWD: ${DB_PASSWD}
       DB_ROOT_PASSWD: ${DB_ROOT_PASSWD}
+    depends_on:
+      - serviceName: mariadb
+        condition: service_started
+      - serviceName: nginx
+        condition: service_started
     restart: always
 
 networks:
