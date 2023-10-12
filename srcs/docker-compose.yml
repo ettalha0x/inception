@@ -67,10 +67,8 @@ volumes:
   db_data:
     driver_opts:
       o: bind
-      type: none
       device: /home/nettalha/data/db
   wp_data:
     driver_opts:
       o: bind
-      type: none
       device: /home/nettalha/data/wp
