@@ -28,6 +28,6 @@ fclean: clean
 
 	@if [ -d "/home/$(USER)/data" ]; then \
 		echo "Removing local volumes directories..."; \
-		rm -rf /home/$(USER)/data; \
+		sudo rm -rf /home/$(USER)/data; \
 	fi
 re: clean all
