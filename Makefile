@@ -15,6 +15,10 @@ clean:
 		echo "Removing containers..."; \
 		docker-compose -p $(NAME) -f srcs/docker-compose.yml down; \
 	fi
+	@if [ -n "$$(docker volume ls -q)" ]; then \
+		echo "Removing docker volumes..."; \
+		docker volume rm $$(docker volume ls -q); \
+	fi
 
 fclean: clean
 	@if [ -n "$$(docker images -q)" ]; then \

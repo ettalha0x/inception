@@ -8,9 +8,10 @@ RUN mkdir /etc/nginx/ssl && \
     -out /etc/nginx/ssl/nettalha.crt  \
     -subj "/C=MA/L=Tetouan/O=42/OU=1337 MED/CN=nettalha.42.fr"
 
-RUN /bin/sh -c 'mkdir -p /var/www/html/{wordpress,portfolio}' && chmod 777 /var/www/html
+RUN mkdir -p /var/www/html/wordpress && mkdir -p /var/www/html/portfolio \
+    && chmod 777 /var/www/html
 
-RUN /bin/sh -c 'git clone https://github.com/ettalha0x/ettalha0x.github.io.git /var/www/html/portfolio'
+RUN git clone https://github.com/ettalha0x/ettalha0x.github.io.git /var/www/html/portfolio
 
 COPY ./conf/nginx.conf /etc/nginx/http.d/nginx.conf
 
