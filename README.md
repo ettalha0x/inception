@@ -4,15 +4,15 @@ This project aims to broaden your knowledge of system administration by using Do
 
 ## Project Roadmap
 
-- [X]   Install the VM.
-- [X]   Comprendre Docker et Compose.
-- [x]   Découvrir les différents points du sujet d’Inception.
-- [X]   Mettre en place le container NGINX.
-- [X]   Mettre en place le container MariaDB.
-- [X]   Mettre en place le container WordPress.
-- [X]   Relier les containers avec Compose.
-- [X]   Comprendre les volumes de Compose.
-- [X]   Finaliser le projet.
+- [X] Install the VM.
+- [X] Understand Docker and Compose.
+- [X] Explore the various aspects of the Inception topic.
+- [X] Set up the NGINX container.
+- [X] Set up the MariaDB container.
+- [X] Set up the WordPress container.
+- [X] Link the containers using Compose.
+- [X] Understand Compose volumes.
+- [X] Finalize the project.
 
 ## Author
 - Noureddine Ettalhaouy [@ettalha0x](https://github.com/ettalha0x)
