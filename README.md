@@ -12,7 +12,7 @@ This project aims to broaden your knowledge of system administration by using Do
 - [X]   Mettre en place le container WordPress.
 - [X]   Relier les containers avec Compose.
 - [X]   Comprendre les volumes de Compose.
-- [ ]   Finaliser le projet.
+- [X]   Finaliser le projet.
 
 ## Author
 - Noureddine Ettalhaouy [@ettalha0x](https://github.com/ettalha0x)
