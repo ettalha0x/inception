@@ -47,9 +47,9 @@ volumes:
     driver_opts:
       o: bind
       type: none
-      device: /home/nettalha/data/db
+      device: ${HOME}/data/db
   wp_data:
     driver_opts:
       o: bind
       type: none
-      device: /home/nettalha/data/wp
+      device: ${HOME}/data/wp
