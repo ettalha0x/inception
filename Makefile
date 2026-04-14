@@ -8,12 +8,12 @@ all:
 		$(CREATE_DIRS); \
 	fi
 	@echo "Building images and starting containers..."
-	@docker-compose -p $(NAME) -f srcs/docker-compose.yml up --build -d
+	@docker compose -p $(NAME) -f srcs/docker-compose.yml up --build -d
 
 clean:
 	@if [ -n "$$(docker container ls -q)" ]; then \
 		echo "Removing containers..."; \
-		docker-compose -p $(NAME) -f srcs/docker-compose.yml down; \
+		docker compose -p $(NAME) -f srcs/docker-compose.yml down; \
 	fi
 	@if [ -n "$$(docker volume ls -q)" ]; then \
 		echo "Removing docker volumes..."; \
