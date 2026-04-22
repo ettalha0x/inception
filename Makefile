@@ -3,7 +3,7 @@ NAME = inception
 CREATE_DIRS = sh srcs/requirements/tools/init.sh
 
 all:
-	@if [ ! -d "/home/$(USER)/data" ]; then \
+	@if [ ! -d "/home/nettalha/data" ]; then \
 		echo "Creating local volumes directories..."; \
 		$(CREATE_DIRS); \
 	fi
@@ -26,8 +26,8 @@ fclean: clean
 		docker rmi -f $$(docker images -q); \
 	fi
 
-	@if [ -d "/home/$(USER)/data" ]; then \
+	@if [ -d "/home/nettalha/data" ]; then \
 		echo "Removing local volumes directories..."; \
-		sudo rm -rf /home/$(USER)/data; \
+		sudo rm -rf /home/nettalha/data; \
 	fi
 re: clean all
